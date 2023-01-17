@@ -1,4 +1,4 @@
 # TG1Grupo1
-Introducción
+## Introducción
 
 Solicitan una aplicación 
