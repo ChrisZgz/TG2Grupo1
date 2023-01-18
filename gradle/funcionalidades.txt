@@ -1,0 +1,8 @@
+Primera ventana Splash
+Despues pantalla de presentación para iniciar nuevo juego y ver estadisticas
+Se elegirá mediante un dialog
+Se mostrarán 10 ultimos registros y contendran a los ganadores y la fecha de la partida
+Al terminar se podrá iniciar nueva partida o volver a la pantalla de presentación
+
+
+
