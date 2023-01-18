@@ -4,5 +4,34 @@ Se elegirá mediante un dialog
 Se mostrarán 10 ultimos registros y contendran a los ganadores y la fecha de la partida
 Al terminar se podrá iniciar nueva partida o volver a la pantalla de presentación
 
+# Partes del proyecto
+    - JEFE DE EQUIPO: CHRISTIAN no me se el apellido
+
+    # Estructuras de datos
+        La aplicación manejará la interfaz del tres en raya
+
+
+    # Estructuras de código
+        # actividades
+            - Splash (si quereis lo ponemos)
+            - Actividad inicio
+            - Actividad del juego
+            -Actividad del splash
+
+
+        # Controles:
+             - 9 Botones que actuarán de tal manera que mostrarán las fichas
+
+
+        # lógica de negocio
+            - El jugador jugará contra la máquna y dependiendo de como juegue ganará o perderá
+        # ...
+
+    # Descripción del proyecto
+    La clase del splash se empleará para incluir una pantalla de bienvenida el el usuario visualizará al abrir la aplicacion
+    Una vez se haya habierto el usuario verá 9 botones los cuales deberá presionar y esperar el turno de la máquina. El juego terminará
+cuando o el usuario o la máquina ganen
+
+
 
 
