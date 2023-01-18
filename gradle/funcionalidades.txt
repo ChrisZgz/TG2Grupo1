@@ -69,7 +69,7 @@
     Al empatar o acabar la partida se podrá iniciar una nueva partida desde la misma ventana o volver a la pantalla de Inicio
 
 # Partes del proyecto
-    - JEFE DE EQUIPO: CHRISTIAN no me se el apellido
+    - JEFE DE EQUIPO: CHRISTIAN no me se el apellido**
 
     # Estructuras de datos
         La aplicación manejará la interfaz del tres en raya
