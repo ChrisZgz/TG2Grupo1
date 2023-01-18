@@ -7,7 +7,7 @@
 7    <uses-sdk
 8        android:minSdkVersion="29"
 8-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml
-9        android:targetSdkVersion="32" />
+9        android:targetSdkVersion="33" />
 9-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml
 10
 11    <permission
@@ -41,94 +41,93 @@
 26-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:11:9-54
 27        android:supportsRtl="true"
 27-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:12:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.TG2Grupo1" >
-29-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:13:9-47
-30        <activity
-30-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:15:9-21:20
-31            android:name="com.example.tg2grupo1.vista.Juego"
-31-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:16:13-40
-32            android:exported="false" >
-32-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:17:13-37
-33            <meta-data
-33-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
-34                android:name="android.app.lib_name"
-34-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
-35                android:value="" />
-35-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
-36        </activity>
-37        <activity
-37-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:22:9-28:20
-38            android:name="com.example.tg2grupo1.vista.Inicio"
-38-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:23:13-41
-39            android:exported="false" >
-39-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:24:13-37
-40            <meta-data
-40-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
-41                android:name="android.app.lib_name"
-41-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
-42                android:value="" />
-42-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
-43        </activity>
-44        <activity
-44-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:29:9-35:20
-45            android:name="com.example.tg2grupo1.vista.Splash"
-45-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:30:13-41
-46            android:exported="false" >
-46-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:31:13-37
-47            <meta-data
-47-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
-48                android:name="android.app.lib_name"
-48-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
-49                android:value="" />
-49-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
-50        </activity>
-51        <activity
-51-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:36:9-48:20
-52            android:name="com.example.tg2grupo1.vista.MainActivity"
-52-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:37:13-47
-53            android:exported="true" >
-53-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:38:13-36
-54            <intent-filter>
-54-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:39:13-43:29
-55                <action android:name="android.intent.action.MAIN" />
-55-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:40:17-69
-55-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:40:25-66
-56
-57                <category android:name="android.intent.category.LAUNCHER" />
-57-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:42:17-77
-57-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:42:27-74
-58            </intent-filter>
-59
-60            <meta-data
-60-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
-61                android:name="android.app.lib_name"
-61-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
-62                android:value="" />
-62-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
-63        </activity>
-64
-65        <provider
-65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-66            android:name="androidx.startup.InitializationProvider"
-66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-67            android:authorities="com.example.tg2grupo1.androidx-startup"
-67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-68            android:exported="false" >
-68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-69            <meta-data
-69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-70                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-71                android:value="androidx.startup" />
-71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-72            <meta-data
-72-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-73                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-74                android:value="androidx.startup" />
-74-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-75        </provider>
-76    </application>
-77
-78</manifest>
+28        android:theme="@style/Theme.TG2Grupo1" >
+28-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:13:9-47
+29        <activity
+29-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:15:9-21:20
+30            android:name="com.example.tg2grupo1.vista.Juego"
+30-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:16:13-40
+31            android:exported="false" >
+31-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:17:13-37
+32            <meta-data
+32-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
+33                android:name="android.app.lib_name"
+33-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
+34                android:value="" />
+34-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
+35        </activity>
+36        <activity
+36-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:22:9-28:20
+37            android:name="com.example.tg2grupo1.vista.Inicio"
+37-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:23:13-41
+38            android:exported="false" >
+38-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:24:13-37
+39            <meta-data
+39-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
+40                android:name="android.app.lib_name"
+40-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
+41                android:value="" />
+41-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
+42        </activity>
+43        <activity
+43-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:29:9-35:20
+44            android:name="com.example.tg2grupo1.vista.Splash"
+44-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:30:13-41
+45            android:exported="false" >
+45-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:31:13-37
+46            <meta-data
+46-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
+47                android:name="android.app.lib_name"
+47-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
+48                android:value="" />
+48-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
+49        </activity>
+50        <activity
+50-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:36:9-48:20
+51            android:name="com.example.tg2grupo1.vista.MainActivity"
+51-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:37:13-47
+52            android:exported="true" >
+52-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:38:13-36
+53            <intent-filter>
+53-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:39:13-43:29
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:40:17-69
+54-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:40:25-66
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:42:17-77
+56-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:42:27-74
+57            </intent-filter>
+58
+59            <meta-data
+59-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:18:13-20:36
+60                android:name="android.app.lib_name"
+60-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:19:17-52
+61                android:value="" />
+61-->C:\Users\usuario\Documents\android\TG2Grupo1\app\src\main\AndroidManifest.xml:20:17-33
+62        </activity>
+63
+64        <provider
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+65            android:name="androidx.startup.InitializationProvider"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+66            android:authorities="com.example.tg2grupo1.androidx-startup"
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+67            android:exported="false" >
+67-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+68            <meta-data
+68-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+69-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+70                android:value="androidx.startup" />
+70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\usuario\.gradle\caches\transforms-3\ec6e2ba61c9a42dd8e0aa44ee71f9dfb\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+71            <meta-data
+71-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+72                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+72-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+73                android:value="androidx.startup" />
+73-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\usuario\.gradle\caches\transforms-3\371d4428813d11175307b9e72a350208\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+74        </provider>
+75    </application>
+76
+77</manifest>
