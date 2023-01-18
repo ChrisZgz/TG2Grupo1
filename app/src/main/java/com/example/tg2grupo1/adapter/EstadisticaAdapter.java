@@ -1,4 +1,4 @@
 package com.example.tg2grupo1.adapter;
 
-public class RecicleAdapter {
+public class EstadisticaAdapter {
 }
