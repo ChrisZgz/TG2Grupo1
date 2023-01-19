@@ -31,71 +31,47 @@
     #Estructuras de proyecto
         #Actividades
             #(Nicolas Del Amo)
-                texto de prueba
-                    prueba / prueba / prueba
+                Se encargará un poco como todos de la programación en general, ademas de buscar
+                material para la app (imagenes, recursos, etc..)
+                    Recursos / Programación
 
             #(Daniel Alvaro del Rio)
-                texto de prueba
-                    prueba / prueba / prueba
+                Se encargará principalmente de los Adapters y de los modelos
+                    Adapters / Programación / Modelos
 
-            #(Christian Martinez)
-                texto de prueba
-                    prueba / prueba / prueba
+            #(Christian Martinez - Jefe de Proyecto)
+                Se encargará de la interfaz (que se vea fresco)
+                    Interfaz / Programación
 
             #(Miguel Lizaranzu)
-                texto de prueba
-                    prueba / prueba / prueba
-
-    #Descripción del proyecto
-
-    (Nicolas del amo)
-    [ ]
-
-    (Daniel del rio)
-    [ ]
-
-    (Christian martinez)
-    [ ]
-
-    (Miguel Lizaranzu)
-    [ ]
-
-    Nuestra aplicación empezará con un Splash el cual tratará de un Gif de una partida entera de
-    Tres en Raya (no durará mas de 5 segundos), al acabar el Splash, nos llevará automaticamente a la pantalla de Inicio
-    desde donde se podrá iniciar una nueva partida o ver unas estadisticas (no se que estadisticas aún xD)
-    Al iniciar una partida se activa un cronometro para contar lo que dura la partida (aún no sabemos si lo incluiremos
-    en la pantalla o no) y será por turnos como es obvio, el cronometro se detendrá al empatar o al ganar uno de los
-    dos jugadores (en caso de no incluirlo gráficamente lo pondremos al acabar la partida).
-    Al empatar o acabar la partida se podrá iniciar una nueva partida desde la misma ventana o volver a la pantalla de Inicio
-
-# Partes del proyecto
-    - JEFE DE EQUIPO: CHRISTIAN no me se el apellido**
-
-    # Estructuras de datos
-        La aplicación manejará la interfaz del tres en raya
-
-
-    # Estructuras de código
-        # actividades
-            - Splash (si quereis lo ponemos)
-            - Actividad inicio
-            - Actividad del juego
-            -Actividad del splash
-
+                Se encargará de ayudar al jefe de equipo con el diseño de la app
+                    Diseño / Programación
 
         # Controles:
-             - 9 Botones que actuarán de tal manera que mostrarán las fichas
+            - 9 Botones que actuarán de tal manera que mostrarán las fichas
 
+        # Lógica de negocio
+            - El jugador jugará contra la máquina y dependiendo de como juegue ganará o perderá
 
-        # lógica de negocio
-            - El jugador jugará contra la máquna y dependiendo de como juegue ganará o perderá
-        # ...
+    #Descripción del proyecto
+        #Descripción general
+            Nuestra aplicación empezará con un Splash el cual tratará de un Gif de una partida entera de
+            Tres en Raya (no durará mas de 5 segundos), al acabar el Splash, nos llevará automaticamente a la pantalla de Inicio
+            desde donde se podrá iniciar una nueva partida o ver unas estadisticas (no se que estadisticas aún xD)
+            Al iniciar una partida se activa un cronometro para contar lo que dura la partida (aún no sabemos si lo incluiremos
+            en la pantalla o no) y será por turnos como es obvio, el cronometro se detendrá al empatar o al ganar uno de los
+            dos jugadores (en caso de no incluirlo gráficamente lo pondremos al acabar la partida).
+            Al empatar o acabar la partida se podrá iniciar una nueva partida desde la misma ventana o volver a la pantalla de Inicio
 
-    # Descripción del proyecto
-    La clase del splash se empleará para incluir una pantalla de bienvenida el el usuario visualizará al abrir la aplicacion
-    Una vez se haya habierto el usuario verá 9 botones los cuales deberá presionar y esperar el turno de la máquina. El juego terminará
-cuando o el usuario o la máquina ganen
+        #Descripción detallada de cada uno
+            (Nicolas del amo)
+            [ ]
 
+            (Daniel del rio)
+            [ ]
 
+            (Christian martinez)
+            [ ]
 
-
+            (Miguel Lizaranzu)
+            [ ]
