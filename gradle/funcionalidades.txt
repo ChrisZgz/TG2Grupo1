@@ -63,7 +63,7 @@
             dos jugadores (en caso de no incluirlo gráficamente lo pondremos al acabar la partida).
             Al empatar o acabar la partida se podrá iniciar una nueva partida desde la misma ventana o volver a la pantalla de Inicio
 
-        #Descripción detallada de cada uno
+        #Descripción detallada de cada uno: 
             (Nicolas del amo)
             [ ]
 
