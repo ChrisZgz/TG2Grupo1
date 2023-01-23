@@ -16,12 +16,14 @@
             android:id="@+id/txtJugadorUno"
             android:layout_width="253dp"
             android:layout_height="36dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/fondoboton"
             android:ems="10"
-            android:hint="  Jugador 1"
+            android:fontFamily="@font/arcade"
+            android:hint="Jugador 1"
             android:inputType="textPersonName"
+            android:textAlignment="center"
             android:textColor="#FFED00"
             android:textColorHint="#8A864D" />
 
@@ -29,12 +31,14 @@
             android:id="@+id/txtJugadorDos"
             android:layout_width="253dp"
             android:layout_height="36dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/fondocampotexto"
             android:ems="10"
-            android:hint="  Jugador 2"
+            android:fontFamily="@font/arcade"
+            android:hint="Jugador 2"
             android:inputType="textPersonName"
+            android:textAlignment="center"
             android:textColor="#FFED00"
             android:textColorHint="#8A864D" />
 
@@ -42,9 +46,13 @@
             android:id="@+id/btnIniciar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/fondoboton"
             android:backgroundTint="#000000"
-            android:text="Button"
-            android:textColor="#FFFFFF" />
+            android:fontFamily="@font/arcade"
+            android:text="INICIAR"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
