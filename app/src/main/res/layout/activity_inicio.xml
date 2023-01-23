@@ -16,11 +16,50 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/arcade"
             android:text="TRES EN RAYA"
             android:textAlignment="center"
             android:textColor="#FFED00"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/btnInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/fondoboton"
+            android:fontFamily="@font/arcade"
+            android:text="INICIAR JUEGO"
+            android:textColor="#8A864D"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnEstadisticas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/fondoboton"
+            android:fontFamily="@font/arcade"
+            android:text="ESTADISTICAS"
+            android:textColor="#8A864D"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnCreditos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/fondoboton"
+            android:fontFamily="@font/arcade"
+            android:text="CREDITOS"
+            android:textColor="#8A864D"
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
