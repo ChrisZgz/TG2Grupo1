@@ -23,7 +23,7 @@
             android:hint="  Jugador 1"
             android:inputType="textPersonName"
             android:textColor="#FFED00"
-            android:textColorHint="#FFED00" />
+            android:textColorHint="#8A864D" />
 
         <EditText
             android:id="@+id/txtJugadorDos"
@@ -36,7 +36,7 @@
             android:hint="  Jugador 2"
             android:inputType="textPersonName"
             android:textColor="#FFED00"
-            android:textColorHint="#FFED00" />
+            android:textColorHint="#8A864D" />
 
         <Button
             android:id="@+id/btnIniciar"
