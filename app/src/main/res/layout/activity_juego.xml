@@ -6,4 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".vista.Juego">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/txtJugadorUno"
+            android:layout_width="253dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/fondoboton"
+            android:ems="10"
+            android:hint="  Jugador 1"
+            android:inputType="textPersonName"
+            android:textColor="#FFED00"
+            android:textColorHint="#FFED00" />
+
+        <EditText
+            android:id="@+id/txtJugadorDos"
+            android:layout_width="253dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/fondocampotexto"
+            android:ems="10"
+            android:hint="  Jugador 2"
+            android:inputType="textPersonName"
+            android:textColor="#FFED00"
+            android:textColorHint="#FFED00" />
+
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fondoboton"
+            android:backgroundTint="#000000"
+            android:text="Button"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
