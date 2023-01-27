@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         gif1 = findViewById(R.id.gif);
-
-        Glide.with(this).load(R.drawable.partidasplash).into(gif1);
+        Glide.with(this).load(R.drawable.partida).into(gif1);
 
         TimerTask tarea = new TimerTask() {
             @Override
