@@ -26,7 +26,7 @@ public class Logica {
         return logica;
     }
 
-    public Boolean tresEnRaya (ImageButton btn, Fichas fich) {
+    public Boolean tresEnRaya (Fichas fich) {
         fichas = fich;
         return comprobar3EnRaya();
     }
