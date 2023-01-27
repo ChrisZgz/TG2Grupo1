@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:saveEnabled="false"
     tools:context=".vista.Juego">
 
     <LinearLayout
@@ -25,6 +26,7 @@
             android:fontFamily="@font/arcade"
             android:hint="Jugador 1"
             android:inputType="textPersonName"
+            android:maxLength="13"
             android:textAlignment="center"
             android:textColor="#FFED00"
             android:textColorHint="#8A864D" />
@@ -40,6 +42,7 @@
             android:fontFamily="@font/arcade"
             android:hint="Jugador 2"
             android:inputType="textPersonName"
+            android:maxLength="13"
             android:textAlignment="center"
             android:textColor="#FFED00"
             android:textColorHint="#8A864D" />
