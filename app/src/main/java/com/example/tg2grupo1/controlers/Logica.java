@@ -3,6 +3,7 @@ package com.example.tg2grupo1.controlers;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -13,10 +14,10 @@ import java.util.List;
 public class Logica {
     private static Context context;
     private static Logica logica;
-    private static List<Button> botones;
+    private static List<ImageButton> botones;
     private static Fichas fichas;
 
-    public static Logica getInstance(List<Button> but, Context conte) {
+    public static Logica getInstance(List<ImageButton> but, Context conte) {
         if (logica == null) {
             context = conte;
             logica = new Logica();
@@ -25,12 +26,12 @@ public class Logica {
         return logica;
     }
 
-    public Boolean startComprobations(Button btn, Fichas fich) {
+    public Boolean tresEnRaya (ImageButton btn, Fichas fich) {
         fichas = fich;
         return comprobar3EnRaya();
     }
 
-    public Boolean comprobarBTN(Button btn, Fichas fich) {
+    public Boolean comprobarVacio(ImageButton btn, Fichas fich) {
         fichas = fich;
         if (botonVacio(btn)) {
             return true;
@@ -41,7 +42,7 @@ public class Logica {
 
     }
 
-    private Boolean botonVacio(Button btn) {
+    private Boolean botonVacio(ImageButton btn) {
         return btn.getBackground() == null;
     }
 
@@ -69,7 +70,7 @@ public class Logica {
                 && tipoDeFicha(botones.get(nu3));
     }
 
-    private Boolean tipoDeFicha(Button btn) {
+    private Boolean tipoDeFicha(ImageButton btn) {
         Drawable background = btn.getBackground();
         return background != null && background.equals(fichas.getTipo());
     }
