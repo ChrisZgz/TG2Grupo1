@@ -1,16 +1,11 @@
 package com.example.tg2grupo1.controlers;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.widget.Button;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.tg2grupo1.R;
 import com.example.tg2grupo1.modelo.Fichas;
 
 import java.util.List;
@@ -32,15 +27,11 @@ public class Logica {
 
     public Boolean startComprobations(Button btn, Fichas fich) {
         fichas = fich;
-        if (comprobarBTN(btn)) {
-            if (comprobar3EnRaya()) {
-
-            }
-        }
-        return true;
+        return comprobar3EnRaya();
     }
 
-    public Boolean comprobarBTN(Button btn) {
+    public Boolean comprobarBTN(Button btn, Fichas fich) {
+        fichas = fich;
         if (botonVacio(btn)) {
             return true;
         } else {
@@ -69,11 +60,7 @@ public class Logica {
             return true;
         } else if (comprobanteDeBloques(0, 4, 8)) {
             return true;
-        } else if (comprobanteDeBloques(2, 4, 6)) {
-            return true;
-        } else {
-            return false;
-        }
+        } else return comprobanteDeBloques(2, 4, 6);
     }
 
     private Boolean comprobanteDeBloques(int nu1, int nu2, int nu3) {
