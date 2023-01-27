@@ -38,6 +38,12 @@ public class Inicio extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button Estadisticas = findViewById(R.id.btnEstadisticas);
+        Estadisticas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {mostrarEstadisticas();}
+        });
     }
 
 
@@ -53,5 +59,17 @@ public class Inicio extends AppCompatActivity {
 
 
             dialogo.show();
+    }
+
+    public void mostrarEstadisticas(){
+        AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        dialogo.setTitle("");
+
+        View dialogoView = inflater.inflate(R.layout.card_layout, null);
+        dialogo.setView(dialogoView);
+
+
+        dialogo.show();
     }
 }
