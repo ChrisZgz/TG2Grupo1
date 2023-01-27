@@ -4,6 +4,11 @@ public class Fichas {
     private int id;
     private int tipo;
 
+    public Fichas(int id, int tipo) {
+        this.id = id;
+        this.tipo = tipo;
+    }
+
     public int getId() {
         return id;
     }
