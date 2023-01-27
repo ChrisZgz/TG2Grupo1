@@ -37,6 +37,7 @@ public class Logica {
 
             }
         }
+        return true;
     }
 
     public Boolean comprobarBTN(Button btn) {
