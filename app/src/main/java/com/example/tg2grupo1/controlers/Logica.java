@@ -3,6 +3,8 @@ package com.example.tg2grupo1.controlers;
 import static com.example.tg2grupo1.controlers.Utilidades.alerta;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageButton;
 
@@ -79,11 +81,10 @@ public class Logica {
     }
 
     private Boolean tipoDeFicha(ImageButton btn) {
-        Drawable drawable1 = btn.getDrawable();
-        Drawable drawable2 = ContextCompat.getDrawable(context, fichas.getTipo());
-        if (drawable1.equals(drawable2)){
-            System.out.println("");
-        }
-        return btn.getForeground() != null && drawable1.equals(drawable2);
+        //con estas lineas lo que hacemos es comprobar si el contenido del imageView es igual que el
+        //de el tipo de ficha que contiene el id de la imagen almacenado
+        BitmapDrawable expectedDrawable = (BitmapDrawable) context.getResources().getDrawable(fichas.getTipo());
+        BitmapDrawable actualDrawable = (BitmapDrawable) btn.getForeground();
+        return btn.getForeground() != null && expectedDrawable.getBitmap().sameAs(actualDrawable.getBitmap());
     }
 }
