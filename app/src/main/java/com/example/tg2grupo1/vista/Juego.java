@@ -1,5 +1,6 @@
 package com.example.tg2grupo1.vista;
 
+import static com.example.tg2grupo1.controlers.Utilidades.alerta;
 import static com.example.tg2grupo1.controlers.Utilidades.comprobarIgualesEditText;
 import static com.example.tg2grupo1.controlers.Utilidades.comprobarVacioEditText;
 
@@ -14,7 +15,6 @@ import android.widget.ImageButton;
 
 import com.example.tg2grupo1.R;
 import com.example.tg2grupo1.controlers.Logica;
-import com.example.tg2grupo1.controlers.Utilidades;
 import com.example.tg2grupo1.modelo.Fichas;
 
 import java.util.ArrayList;
@@ -87,7 +87,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt1.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -101,7 +105,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt2.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -115,7 +123,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt3.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -129,7 +141,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt4.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -143,7 +159,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt5.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -157,7 +177,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt6.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -171,7 +195,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt7.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -185,7 +213,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt8.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -199,7 +231,11 @@ public class Juego extends AppCompatActivity {
                         fichaEnUso.getTipo());
                 bt9.setForeground(myDrawable);
                 if (contadorDeFichas > 4) {
-                    if (logica.tresEnRaya(fichaEnUso)){
+                    if (logica.tresEnRaya(fichaEnUso)) {
+                        deshabilitarBotonesDeJuego();
+                    }else if (contadorDeFichas == 9){
+                        alerta(this, "EMPATE", "LOS GUGADORES " +txtJugadorUno.getText().toString() +
+                                " Y "+ txtJugadorDos.getText().toString() +" HAN EMPATADO");
                         deshabilitarBotonesDeJuego();
                     }
                 }
@@ -238,6 +274,28 @@ public class Juego extends AppCompatActivity {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setEnabled(false);
         }
+    }
+
+    private void reiniciarJuego() {
+        for (int i =0;i<9;i++){
+            botones.get(i).setForeground(null);
+        }
+        contadorDeFichas =0;
+    }
+
+    private void reiniciarJuegoOtrosJugadores() {
+        for (int i =0;i<9;i++){
+            botones.get(i).setForeground(null);
+        }
+        txtJugadorUno.setText("");
+        txtJugadorDos.setText("");
+        txtJugadorUno.setEnabled(true);
+        txtJugadorDos.setEnabled(true);
+        btnIniciar.setEnabled(true);
+        ficha1 = null;
+        ficha2 = null;
+        fichaEnUso = null;
+        contadorDeFichas =0;
     }
 
     @Override
