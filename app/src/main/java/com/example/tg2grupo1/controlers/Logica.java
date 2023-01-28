@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.provider.ContactsContract;
 import android.widget.ImageButton;
 
 import androidx.core.content.ContextCompat;
@@ -20,10 +21,11 @@ public class Logica {
     private static List<ImageButton> botones;
     private static Fichas fichas;
 
-    public static Logica getInstance(Context conte) {
+    public static Logica getInstance(List<ImageButton> bot, Context conte) {
         if (logica == null) {
             context = conte;
             logica = new Logica();
+            botones = bot;
         }
         return logica;
     }
@@ -31,8 +33,7 @@ public class Logica {
         logica = null;
     }
 
-    public Boolean tresEnRaya(Fichas fich, List<ImageButton> buttons) {
-        botones = buttons;
+    public Boolean tresEnRaya(Fichas fich) {
         fichas = fich;
         if (comprobar3EnRaya()){
             alerta(context, "FELICIDADES", "EL JUGADOR: "+ fich.getNombre()+ " ES EL GANADOR");
