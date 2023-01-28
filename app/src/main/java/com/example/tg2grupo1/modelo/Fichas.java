@@ -1,20 +1,20 @@
 package com.example.tg2grupo1.modelo;
 
 public class Fichas {
-    private int id;
+    private String nombre;
     private int tipo;
 
-    public Fichas(int id, int tipo) {
-        this.id = id;
+    public Fichas(String nombre, int tipo) {
+        this.nombre = nombre;
         this.tipo = tipo;
     }
 
-    public int getId() {
-        return id;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getTipo() {
