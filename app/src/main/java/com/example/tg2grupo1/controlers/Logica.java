@@ -1,13 +1,12 @@
 package com.example.tg2grupo1.controlers;
 
-import static com.example.tg2grupo1.controlers.Utilidades.alertaError;
+import static com.example.tg2grupo1.controlers.Utilidades.alerta;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
 
 import com.example.tg2grupo1.modelo.Fichas;
 
@@ -19,18 +18,25 @@ public class Logica {
     private static List<ImageButton> botones;
     private static Fichas fichas;
 
-    public static Logica getInstance(List<ImageButton> but, Context conte) {
+    public static Logica getInstance(Context conte) {
         if (logica == null) {
             context = conte;
             logica = new Logica();
-            botones = but;
         }
         return logica;
     }
+    public static void unset(){
+        logica = null;
+    }
 
-    public Boolean tresEnRaya(Fichas fich) {
+    public Boolean tresEnRaya(Fichas fich, List<ImageButton> buttons) {
+        botones = buttons;
         fichas = fich;
-        return comprobar3EnRaya();
+        if (comprobar3EnRaya()){
+            alerta(context, "FELICIDADES", "EL JUGADOR: "+ fich.getNombre()+ " ES EL GANADOR");
+            return true;
+        }
+        else return false;
     }
 
     public Boolean comprobarVacio(ImageButton btn, Fichas fich) {
@@ -38,7 +44,7 @@ public class Logica {
         if (botonVacio(btn)) {
             return true;
         } else {
-            alertaError(context, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            alerta(context, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             return false;
         }
 
@@ -73,6 +79,11 @@ public class Logica {
     }
 
     private Boolean tipoDeFicha(ImageButton btn) {
-        return btn.getForeground() != null && btn.getForeground().equals(fichas.getTipo());
+        Drawable drawable1 = btn.getDrawable();
+        Drawable drawable2 = ContextCompat.getDrawable(context, fichas.getTipo());
+        if (drawable1.equals(drawable2)){
+            System.out.println("");
+        }
+        return btn.getForeground() != null && drawable1.equals(drawable2);
     }
 }
