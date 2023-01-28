@@ -1,5 +1,7 @@
 package com.example.tg2grupo1.controlers;
 
+import static com.example.tg2grupo1.controlers.Utilidades.alertaError;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.Button;
@@ -26,7 +28,7 @@ public class Logica {
         return logica;
     }
 
-    public Boolean tresEnRaya (Fichas fich) {
+    public Boolean tresEnRaya(Fichas fich) {
         fichas = fich;
         return comprobar3EnRaya();
     }
@@ -36,14 +38,14 @@ public class Logica {
         if (botonVacio(btn)) {
             return true;
         } else {
-            alertaError("ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            alertaError(context, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             return false;
         }
 
     }
 
     private Boolean botonVacio(ImageButton btn) {
-        return btn.getBackground() == null;
+        return btn.getForeground() == null;
     }
 
     private Boolean comprobar3EnRaya() {
@@ -71,16 +73,6 @@ public class Logica {
     }
 
     private Boolean tipoDeFicha(ImageButton btn) {
-        Drawable background = btn.getBackground();
-        return background != null && background.equals(fichas.getTipo());
-    }
-
-    private void alertaError(String titulo, String contenido) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(titulo);
-        builder.setMessage(contenido);
-        builder.setPositiveButton("Aceptar", null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        return btn.getForeground() != null && btn.getForeground().equals(fichas.getTipo());
     }
 }
