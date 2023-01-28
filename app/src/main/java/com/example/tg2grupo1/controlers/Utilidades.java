@@ -12,8 +12,14 @@ public class Utilidades {
             alerta(context, "ERROR",
                     "NO PUEDE DEJAR EL CAMPO " + editText.getHint());
             return true;
-        }
-        else return false;
+        } else return false;
+    }
+
+    public static Boolean comprobarIgualesEditText(Context context, EditText editText1, EditText editText2) {
+        if (editText1.getText().toString().equals(editText2.getText().toString())) {
+            alerta(context, "ERROR", "LOS NOMBRES DE LOS JUGADORES NO PUEDEN SER IGUALES");
+            return true;
+        } else return false;
     }
 
     public static void alerta(Context context, String titulo, String contenido) {
