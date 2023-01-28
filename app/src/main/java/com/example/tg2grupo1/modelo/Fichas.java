@@ -5,7 +5,7 @@ public class Fichas {
     private int tipo;
 
     public Fichas(String nombre, int tipo) {
-        this.nombre = nombre;
+        this.nombre = nombre.toUpperCase();
         this.tipo = tipo;
     }
 
@@ -14,7 +14,7 @@ public class Fichas {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = nombre.toUpperCase();
     }
 
     public int getTipo() {
