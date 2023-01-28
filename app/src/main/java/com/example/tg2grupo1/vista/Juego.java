@@ -1,7 +1,12 @@
 package com.example.tg2grupo1.vista;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static com.example.tg2grupo1.controlers.Utilidades.comprobarIgualesEditText;
+import static com.example.tg2grupo1.controlers.Utilidades.comprobarVacioEditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,6 +14,7 @@ import android.widget.ImageButton;
 
 import com.example.tg2grupo1.R;
 import com.example.tg2grupo1.controlers.Logica;
+import com.example.tg2grupo1.controlers.Utilidades;
 import com.example.tg2grupo1.modelo.Fichas;
 
 import java.util.ArrayList;
@@ -28,16 +34,17 @@ public class Juego extends AppCompatActivity {
     ImageButton bt8;
     ImageButton bt9;
     Logica logica = new Logica();
-    Fichas ficha1 = new Fichas(1, R.drawable.fichao);
-    Fichas ficha2 = new Fichas(2, R.drawable.fichax);
-    Fichas fichaEnUso = ficha1;
+    Fichas ficha1;
+    Fichas ficha2;
+    Fichas fichaEnUso;
     int contadorDeFichas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_juego);
-        contadorDeFichas = 0;
+
         txtJugadorUno = findViewById(R.id.txtJugadorUno);
         txtJugadorDos = findViewById(R.id.txtJugadorDos);
         btnIniciar = findViewById(R.id.btnIniciar);
@@ -50,28 +57,155 @@ public class Juego extends AppCompatActivity {
         bt7 = findViewById(R.id.bt7);
         bt8 = findViewById(R.id.bt8);
         bt9 = findViewById(R.id.bt9);
+
+        contadorDeFichas = 0;
         List<ImageButton> botones = meterBotones();
-        Logica.getInstance(botones, this);
+        Logica.getInstance(this);
+
+        for (int i = 0; i < 9; i++) {
+            botones.get(i).setEnabled(false);
+        }
 
         btnIniciar.setOnClickListener(v -> {
-            txtJugadorUno.setEnabled(false);
-            txtJugadorDos.setEnabled(false);
-            for (int i = 0; i < 9; i++) {
-                botones.get(i).setClickable(true);
+            if (comprobarVacioEditText(this, txtJugadorUno)) {
+            } else if (comprobarVacioEditText(this, txtJugadorDos)) {
+            } else if (comprobarIgualesEditText(this, txtJugadorUno, txtJugadorDos)){
             }
-            btnIniciar.setClickable(false);
+            else {
+                ficha1 = new Fichas(txtJugadorUno.getText().toString(), R.drawable.fichao);
+                ficha2 = new Fichas(txtJugadorDos.getText().toString(), R.drawable.fichax);
+                fichaEnUso = ficha1;
+                txtJugadorUno.setEnabled(false);
+                txtJugadorDos.setEnabled(false);
+                for (int i = 0; i < 9; i++) {
+                    botones.get(i).setEnabled(true);
+                }
+                btnIniciar.setClickable(false);
+            }
         });
 
         bt1.setOnClickListener(v -> {
-            logica.comprobarVacio(bt1, fichaEnUso);
-            if (contadorDeFichas > 4) {
-                logica.tresEnRaya(fichaEnUso);
+            if (logica.comprobarVacio(bt1, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt1.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
             }
-            contadorDeFichas++;
+            if (bt1.getForeground().getConstantState().equals(getResources().getDrawable(fichaEnUso.getTipo()).getConstantState())) {
+                System.out.println("");
+            } else {
+                // El contenido del foreground es diferente a la imagen esperada
+            }
+        });
+        bt2.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt2, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt2.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt3.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt3, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt3.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt4.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt4, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt4.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt5.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt5, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt5.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt6.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt6, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt6.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt7.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt7, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt7.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt8.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt8, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt8.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
+        });
+        bt9.setOnClickListener(v -> {
+            if (logica.comprobarVacio(bt9, fichaEnUso)){
+                contadorDeFichas++;
+                Drawable myDrawable = ContextCompat.getDrawable(getApplicationContext(),
+                        fichaEnUso.getTipo());
+                bt9.setForeground(myDrawable);
+                if (contadorDeFichas > 4) {
+                    logica.tresEnRaya(fichaEnUso, meterBotones());
+                }
+                cambioDeFicha();
+            }
         });
     }
 
-    public ArrayList<ImageButton> meterBotones() {
+    private void cambioDeFicha(){
+        if (fichaEnUso == ficha1){
+            fichaEnUso = ficha2;
+        }else fichaEnUso = ficha1;
+    }
+
+    private ArrayList<ImageButton> meterBotones() {
         ArrayList<ImageButton> botones = new ArrayList<>();
         botones.add(bt1);
         botones.add(bt2);
@@ -83,5 +217,11 @@ public class Juego extends AppCompatActivity {
         botones.add(bt8);
         botones.add(bt9);
         return botones;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+            Logica.unset();
     }
 }
