@@ -9,14 +9,14 @@ public class Utilidades {
 
     public static Boolean comprobarVacioEditText(Context context, EditText editText) {
         if (editText.getText().toString().trim().isEmpty()) {
-            alertaError(context, "ERROR",
+            alerta(context, "ERROR",
                     "NO PUEDE DEJAR EL CAMPO " + editText.getHint());
             return true;
         }
         else return false;
     }
 
-    public static void alertaError(Context context, String titulo, String contenido) {
+    public static void alerta(Context context, String titulo, String contenido) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(titulo);
         builder.setMessage(contenido);
