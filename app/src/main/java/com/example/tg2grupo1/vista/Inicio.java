@@ -10,57 +10,61 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.tg2grupo1.R;
 
 public class Inicio extends AppCompatActivity {
-
-
+    Button creditos;
+    Button iniciar;
+    Button estadisticas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
-        Button Creditos = findViewById(R.id.btnCreditos);
-        Creditos.setOnClickListener(new View.OnClickListener() {
+        creditos = findViewById(R.id.btnCreditos);
+        creditos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mostrarAlertDialog();
-                cambiarColor(Creditos);
-                cambiarColor2(Creditos);
+                mostrarAlertDialog(creditos);
+                cambiarColor(creditos);
             }
 
         });
 
-        Button Iniciar = (Button) findViewById(R.id.btnInicio);
-        Iniciar.setOnClickListener(new View.OnClickListener() {
+        iniciar = (Button) findViewById(R.id.btnInicio);
+        iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(Inicio.this, Juego.class);
                 startActivity(i);
-                cambiarColor(Iniciar);
-                cambiarColor2(Iniciar);
+                cambiarColor(iniciar);
             }
         });
 
-        Button Estadisticas = findViewById(R.id.btnEstadisticas);
-        Estadisticas.setOnClickListener(new View.OnClickListener() {
+        estadisticas = findViewById(R.id.btnEstadisticas);
+        estadisticas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mostrarEstadisticas();
-                cambiarColor(Estadisticas);
+                mostrarEstadisticas(estadisticas);
+                cambiarColor(estadisticas);
             }
 
         });
     }
 
 
-        public void mostrarAlertDialog(){
+        public void mostrarAlertDialog(Button button){
             AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
             LayoutInflater inflater = this.getLayoutInflater();
             dialogo.setTitle("");
+            dialogo.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    cambiarColor2(button);
+                }
+            });
 
             View dialogoView = inflater.inflate(R.layout.dialogocreditos, null);
             dialogo.setView(dialogoView);
@@ -69,10 +73,16 @@ public class Inicio extends AppCompatActivity {
             dialogo.show();
     }
 
-    public void mostrarEstadisticas(){
+    public void mostrarEstadisticas(Button button){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
         dialogo.setTitle("");
+        dialogo.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+            cambiarColor2(button);
+            }
+        });
 
         View dialogoView = inflater.inflate(R.layout.card_layout, null);
         dialogo.setView(dialogoView);
@@ -92,5 +102,6 @@ public class Inicio extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        cambiarColor2(iniciar);
     }
 }
