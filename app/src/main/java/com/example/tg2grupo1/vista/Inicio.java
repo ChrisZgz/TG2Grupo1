@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +28,10 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mostrarAlertDialog();
+                cambiarColor(Creditos);
+                cambiarColor2(Creditos);
             }
+
         });
 
         Button Iniciar = (Button) findViewById(R.id.btnInicio);
@@ -36,17 +40,21 @@ public class Inicio extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Inicio.this, Juego.class);
                 startActivity(i);
+                cambiarColor(Iniciar);
+                cambiarColor2(Iniciar);
             }
         });
 
         Button Estadisticas = findViewById(R.id.btnEstadisticas);
         Estadisticas.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {mostrarEstadisticas();}
+            public void onClick(View view) {
+                mostrarEstadisticas();
+                cambiarColor(Estadisticas);
+            }
+
         });
     }
-
-
 
 
         public void mostrarAlertDialog(){
@@ -71,5 +79,18 @@ public class Inicio extends AppCompatActivity {
 
 
         dialogo.show();
+    }
+
+    public void cambiarColor(Button boton) {
+        boton.setTextColor(Color.parseColor("#FFED00"));
+    }
+
+    public void cambiarColor2 (Button boton) {
+        boton.setTextColor(Color.parseColor("#8A864D"));
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
