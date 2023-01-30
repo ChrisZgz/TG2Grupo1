@@ -1,4 +1,4 @@
-package com.example.tg2grupo1.controlers;
+package com.example.tg2grupo1.modelo;
 
 public class Serie {
 
@@ -28,7 +28,6 @@ public class Serie {
 
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
-                "puntuacion=" + resultado;
+        return nombre + ':' + resultado;
     }
 }

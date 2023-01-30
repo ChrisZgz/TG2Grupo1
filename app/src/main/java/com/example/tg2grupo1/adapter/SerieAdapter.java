@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.tg2grupo1.R;
-import com.example.tg2grupo1.controlers.Serie;
+import com.example.tg2grupo1.modelo.Serie;
 
 import java.util.ArrayList;
 
