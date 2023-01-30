@@ -44,10 +44,10 @@ public class Logica {
     public Boolean comprobarVacio(ImageButton btn, Fichas fich) {
         fichas = fich;
         if (botonVacio(btn)) {
-            //meter aqui sonido de poner ficha
+            Sonidos.sonidoFicha(context);
             return true;
         } else {
-            //meter aqui sonido de error
+            Sonidos.sonidoFallo(context);
             return false;
         }
 

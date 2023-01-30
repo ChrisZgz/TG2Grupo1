@@ -19,6 +19,7 @@ import android.widget.ImageButton;
 import com.example.tg2grupo1.R;
 import com.example.tg2grupo1.controlers.LecturaEscrituraDatos;
 import com.example.tg2grupo1.controlers.Logica;
+import com.example.tg2grupo1.controlers.Sonidos;
 import com.example.tg2grupo1.modelo.Fichas;
 import com.example.tg2grupo1.modelo.Serie;
 
@@ -247,7 +248,7 @@ public class Juego extends AppCompatActivity {
         String resultado = "";
         if (logica.tresEnRaya(fichaEnUso)) {
             deshabilitarBotonesDeJuego();
-            //sonido de victoria
+            Sonidos.sonidoVictoria(this);
             alerta(this, "FELICIDADES", "EL JUGADOR: " + fichaEnUso.getNombre() + " ES EL GANADOR");
             nombres = fichaEnUso.getNombre();
             resultado = "GANADOR";
@@ -255,7 +256,7 @@ public class Juego extends AppCompatActivity {
             LecturaEscrituraDatos.guardar(this, serie.toString());
         } else if (contadorDeFichas == 9) {
             deshabilitarBotonesDeJuego();
-            //sonidos de empate
+            Sonidos.sonidoEmpate(this);
             alerta(this, "EMPATE", "LOS JUGADORES " + txtJugadorUno.getText().toString() +
                     " Y " + txtJugadorDos.getText().toString() + " HAN EMPATADO");
             nombres = ficha1.getNombre() + " " + ficha2.getNombre();
