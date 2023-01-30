@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tg2grupo1.R;
+import com.example.tg2grupo1.controlers.LecturaEscrituraDatos;
+
+import java.io.FileNotFoundException;
 
 public class Inicio extends AppCompatActivity {
     Button creditos;
@@ -23,6 +26,11 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
+        try {
+            LecturaEscrituraDatos.verificar(this);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         creditos = findViewById(R.id.btnCreditos);
         creditos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +92,7 @@ public class Inicio extends AppCompatActivity {
             }
         });
 
-        View dialogoView = inflater.inflate(R.layout.card_layout, null);
+        View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
         dialogo.setView(dialogoView);
 
 

@@ -36,7 +36,6 @@ public class Logica {
     public Boolean tresEnRaya(Fichas fich) {
         fichas = fich;
         if (comprobar3EnRaya()){
-            alerta(context, "FELICIDADES", "EL JUGADOR: "+ fich.getNombre()+ " ES EL GANADOR");
             return true;
         }
         else return false;

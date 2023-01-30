@@ -28,6 +28,6 @@ public class Serie {
 
     @Override
     public String toString() {
-        return nombre + ':' + resultado;
+        return resultado + ':' + nombre;
     }
 }
