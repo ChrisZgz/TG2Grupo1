@@ -51,6 +51,8 @@ public class Juego extends AppCompatActivity {
     private static int contadorDeFichas;
     private static List<ImageButton> botones;
     private static Context context;
+    private static Drawable fondoVerde;
+    private static Drawable fondoNormal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,9 @@ public class Juego extends AppCompatActivity {
                 btnIniciar.setEnabled(false);
                 btnIniciar.setTextColor(Color.parseColor("#9B9B9B"));
                 Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.fondocampotextoverde);
+                Drawable drawable1 = ContextCompat.getDrawable(getApplicationContext(), R.drawable.fondocampotexto);
+                fondoVerde = drawable;
+                fondoNormal = drawable1;
                 txtJugadorUno.setBackground(drawable);
                 txtJugadorUno.setTextColor(Color.parseColor("#000000"));
             }
@@ -225,24 +230,18 @@ public class Juego extends AppCompatActivity {
     }
 
     private void cambioDeFicha() {
-        Drawable drawableverde = ContextCompat.getDrawable(getApplicationContext(), R.drawable.fondocampotextoverde);
-        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.fondocampotexto);
         if (fichaEnUso == ficha1) {
             fichaEnUso = ficha2;
-            txtJugadorUno.setBackground(drawable);
-            txtJugadorUno.setTextColor(Color.parseColor("#FFED00"));
-            txtJugadorDos.setBackground(drawableverde);
-            txtJugadorDos.setTextColor(Color.parseColor("#000000"));
+            disenoNormal(txtJugadorUno);
+            disenoVerde(txtJugadorDos);
         } else {
             fichaEnUso = ficha1;
-            txtJugadorUno.setBackground(drawableverde);
-            txtJugadorUno.setTextColor(Color.parseColor("#000000"));
-            txtJugadorDos.setBackground(drawable);
-            txtJugadorDos.setTextColor(Color.parseColor("#FFED00"));
+            disenoVerde(txtJugadorUno);
+            disenoNormal(txtJugadorDos);
         }
         if (!bt1.isEnabled()) {
-            txtJugadorUno.setBackground(drawable);
-            txtJugadorDos.setBackground(drawable);
+            txtJugadorUno.setBackground(fondoNormal);
+            txtJugadorDos.setBackground(fondoNormal);
             txtJugadorUno.setTextColor(Color.parseColor("#FFED00"));
             txtJugadorDos.setTextColor(Color.parseColor("#FFED00"));
             btnIniciar.setTextColor(Color.parseColor("#FFFFFF"));
@@ -286,7 +285,14 @@ public class Juego extends AppCompatActivity {
         botones.add(bt9);
         return botones;
     }
-
+    public static void disenoVerde(EditText editText){
+        editText.setBackground(fondoVerde);
+        editText.setTextColor(Color.parseColor("#000000"));
+    }
+    public static void disenoNormal(EditText editText){
+        editText.setBackground(fondoNormal);
+        editText.setTextColor(Color.parseColor("#FFED00"));
+    }
     private static void habilitarBotonesDeJuego() {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setEnabled(true);
@@ -303,6 +309,7 @@ public class Juego extends AppCompatActivity {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setForeground(null);
         }
+        disenoVerde(txtJugadorUno);
         fichaEnUso = ficha1;
         habilitarBotonesDeJuego();
         contadorDeFichas = 0;
