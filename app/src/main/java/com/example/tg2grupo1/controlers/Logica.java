@@ -44,9 +44,10 @@ public class Logica {
     public Boolean comprobarVacio(ImageButton btn, Fichas fich) {
         fichas = fich;
         if (botonVacio(btn)) {
+            //meter aqui sonido de poner ficha
             return true;
         } else {
-            alerta(context, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            //meter aqui sonido de error
             return false;
         }
 

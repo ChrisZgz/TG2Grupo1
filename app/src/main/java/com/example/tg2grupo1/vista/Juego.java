@@ -99,6 +99,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt2.setOnClickListener(v -> {
@@ -111,6 +113,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt3.setOnClickListener(v -> {
@@ -123,6 +127,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt4.setOnClickListener(v -> {
@@ -135,6 +141,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt5.setOnClickListener(v -> {
@@ -147,6 +155,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt6.setOnClickListener(v -> {
@@ -159,6 +169,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt7.setOnClickListener(v -> {
@@ -171,6 +183,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt8.setOnClickListener(v -> {
@@ -183,6 +197,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
         bt9.setOnClickListener(v -> {
@@ -195,6 +211,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
+            } else{
+                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
             }
         });
     }
@@ -229,15 +247,17 @@ public class Juego extends AppCompatActivity {
         String resultado = "";
         if (logica.tresEnRaya(fichaEnUso)) {
             deshabilitarBotonesDeJuego();
+            //sonido de victoria
             alerta(this, "FELICIDADES", "EL JUGADOR: " + fichaEnUso.getNombre() + " ES EL GANADOR");
             nombres = fichaEnUso.getNombre();
             resultado = "GANADOR";
             Serie serie = new Serie(nombres, resultado);
             LecturaEscrituraDatos.guardar(this, serie.toString());
         } else if (contadorDeFichas == 9) {
+            deshabilitarBotonesDeJuego();
+            //sonidos de empate
             alerta(this, "EMPATE", "LOS JUGADORES " + txtJugadorUno.getText().toString() +
                     " Y " + txtJugadorDos.getText().toString() + " HAN EMPATADO");
-            deshabilitarBotonesDeJuego();
             nombres = ficha1.getNombre() + " " + ficha2.getNombre();
             resultado = "EMPATE";
             Serie serie = new Serie(nombres, resultado);
