@@ -5,12 +5,17 @@ import static com.example.tg2grupo1.controlers.Utilidades.comprobarIgualesEditTe
 import static com.example.tg2grupo1.controlers.Utilidades.comprobarVacioEditText;
 
 import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,24 +32,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Juego extends AppCompatActivity {
-    EditText txtJugadorUno;
-    EditText txtJugadorDos;
-    Button btnIniciar;
-    ImageButton bt1;
-    ImageButton bt2;
-    ImageButton bt3;
-    ImageButton bt4;
-    ImageButton bt5;
-    ImageButton bt6;
-    ImageButton bt7;
-    ImageButton bt8;
-    ImageButton bt9;
-    Logica logica = new Logica();
-    Fichas ficha1;
-    Fichas ficha2;
-    Fichas fichaEnUso;
-    int contadorDeFichas;
-    List<ImageButton> botones;
+    private static EditText txtJugadorUno;
+    private static EditText txtJugadorDos;
+    private static Button btnIniciar;
+    private static ImageButton bt1;
+    private static ImageButton bt2;
+    private static ImageButton bt3;
+    private static ImageButton bt4;
+    private static ImageButton bt5;
+    private static ImageButton bt6;
+    private static ImageButton bt7;
+    private static ImageButton bt8;
+    private static ImageButton bt9;
+    private static Logica logica = new Logica();
+    private static Fichas ficha1;
+    private static Fichas ficha2;
+    private static Fichas fichaEnUso;
+    private static int contadorDeFichas;
+    private static List<ImageButton> botones;
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +88,7 @@ public class Juego extends AppCompatActivity {
                 txtJugadorUno.setEnabled(false);
                 txtJugadorDos.setEnabled(false);
                 habilitarBotonesDeJuego();
-                btnIniciar.setClickable(false);
+                btnIniciar.setEnabled(false);
                 btnIniciar.setTextColor(Color.parseColor("#9B9B9B"));
                 Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.fondocampotextoverde);
                 txtJugadorUno.setBackground(drawable);
@@ -100,8 +106,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt2.setOnClickListener(v -> {
@@ -114,8 +120,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt3.setOnClickListener(v -> {
@@ -128,8 +134,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt4.setOnClickListener(v -> {
@@ -142,8 +148,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt5.setOnClickListener(v -> {
@@ -156,8 +162,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt6.setOnClickListener(v -> {
@@ -170,8 +176,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt7.setOnClickListener(v -> {
@@ -184,8 +190,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt8.setOnClickListener(v -> {
@@ -198,8 +204,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
         bt9.setOnClickListener(v -> {
@@ -212,8 +218,8 @@ public class Juego extends AppCompatActivity {
                     comprobacionFinal();
                 }
                 cambioDeFicha();
-            } else{
-                alerta(this, "ERROR", "LA CASILLA YA ESTÁ OCUPADA");
+            } else {
+                alerta(this, "LA CASILLA YA ESTÁ OCUPADA", false);
             }
         });
     }
@@ -249,16 +255,17 @@ public class Juego extends AppCompatActivity {
         if (logica.tresEnRaya(fichaEnUso)) {
             deshabilitarBotonesDeJuego();
             Sonidos.sonidoVictoria(this);
-            alerta(this, "FELICIDADES", "EL JUGADOR: " + fichaEnUso.getNombre() + " ES EL GANADOR");
+            alerta(this, "EL JUGADOR: " + fichaEnUso.getNombre() + " ES EL GANADOR", true);
             nombres = fichaEnUso.getNombre();
             resultado = "GANADOR";
             Serie serie = new Serie(nombres, resultado);
             LecturaEscrituraDatos.guardar(this, serie.toString());
         } else if (contadorDeFichas == 9) {
+
             deshabilitarBotonesDeJuego();
             Sonidos.sonidoEmpate(this);
-            alerta(this, "EMPATE", "LOS JUGADORES " + txtJugadorUno.getText().toString() +
-                    " Y " + txtJugadorDos.getText().toString() + " HAN EMPATADO");
+            alerta(this, "LOS JUGADORES " + txtJugadorUno.getText().toString() +
+                    " Y " + txtJugadorDos.getText().toString() + " HAN EMPATADO", true);
             nombres = ficha1.getNombre() + " " + ficha2.getNombre();
             resultado = "EMPATE";
             Serie serie = new Serie(nombres, resultado);
@@ -280,26 +287,28 @@ public class Juego extends AppCompatActivity {
         return botones;
     }
 
-    private void habilitarBotonesDeJuego() {
+    private static void habilitarBotonesDeJuego() {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setEnabled(true);
         }
     }
 
-    private void deshabilitarBotonesDeJuego() {
+    private static void deshabilitarBotonesDeJuego() {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setEnabled(false);
         }
     }
 
-    private void reiniciarJuego() {
+    public static void reiniciarJuego() {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setForeground(null);
         }
+        fichaEnUso = ficha1;
+        habilitarBotonesDeJuego();
         contadorDeFichas = 0;
     }
 
-    private void reiniciarJuegoOtrosJugadores() {
+    public static void reiniciarJuegoOtrosJugadores() {
         for (int i = 0; i < 9; i++) {
             botones.get(i).setForeground(null);
         }
@@ -314,9 +323,14 @@ public class Juego extends AppCompatActivity {
         contadorDeFichas = 0;
     }
 
+    public static void cerrarActividad(Activity activity) {
+        activity.finish();
+    }
+
     @Override
     protected void onStop() {
         super.onStop();
         Logica.unset();
+        finish();
     }
 }
