@@ -92,7 +92,7 @@ public class Inicio extends AppCompatActivity {
     public void mostrarEstadisticas(Button button){
         AlertDialog.Builder estadisticas = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
+        View dialogoView = inflater.inflate(R.layout.recyclerviewalertdialog, null);
         //pedir todos los datos
 
         ArrayList<Serie> series = LecturaEscrituraDatos.mostrar(this);
