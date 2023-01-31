@@ -1,34 +1,32 @@
 # TG1Grupo1
 ## Introducción
 
-    Partes del proyecto
-        Documentación
-        Repartición de Tareas
-        Realización de la Aplicación
-
     # Estructuras de datos
-        Clase Inicio: Aqui se encuentran las distintas opciones de Inicio de nueva partida y Ver estadísticas
-        [ *Metodos y demás ]
+        Adapter {
+            SerieAdapter: Aqui se hacen los modelos para las estadisticas, donde en este caso
+            se encontrarían (las ultimas 10 partidas) o (las 10 partidas mas cortas(que menos turnos han tenido))
+        }
 
-        Clase Juego: Desde donde se podrá jugar al juego (en este caso Tres en Raya)
-        [ *Metodos y demás ]
+        Controlers {
+            LecturaEscrituraDatos: Esta clase como su nombre indica se ocupa de la recogida de los datos de las partidas
+            para poder mostrarlos luego en la parte de estadisticas
+            Logica: Aqui se desarrolla todo el codigo que haga que funcione el juego
+            Sonidos: En esta clase se encuentran los sonidos a utilizar en la aplicación
+            Utilidades: Aqui se encuentran los métodos para comprobar los campos, entre otras cosas
+        }
 
-        Clase MainActivity: Basicamente desde aquí se inicia toda la aplicación y es donde se encuentra el Splash
-        [ *Metodos y demás ]
+        Modelo {
+            Fichas: Esto es el constructor donde se encuentran las variables de las fichas
+            Serie: Esto es el constructor donde se encuentran las variables de las estadisticas
+        }
 
-        Clase Splash: En esta clase controlamos el temporizador, ajustandolo al tiempo que creamos conveniente que
-        aparezca en la pantalla
-        [ *Metodos y demás ]
+        Vista {
+            Inicio: Aqui se encuentran las distintas opciones de Inicio de nueva partida y Ver estadísticas
+            Juego: Desde donde se podrá jugar al juego (en este caso Tres en Raya)
+            MainActivity: Basicamente desde aquí se inicia toda la aplicación y es donde se encuentra el Splash 
+        }
 
-        Clase-Modelo Fichas: La clase con el constructor de las fichas, ademas de los Getter and Setter
-        [ *Metodos y demás ]
-
-        Clase-Adapter JuegoAdapter: Desde aqui se hacen los modelos para el juego
-        [ *Metodos y demás ]
-
-        Clase-Adapter EstadisticaAdapter: Aqui se hacen los modelos para las estadisticas, donde en este caso
-        se encontrarían (las ultimas 10 partidas) o (las 10 partidas mas cortas(que menos turnos han tenido))
-        [ *Metodos y demás ]
+        
 
     #Estructuras de proyecto
         #Actividades
@@ -67,13 +65,17 @@
 
         #Descripción detallada de cada uno
             (Nicolas del amo)
-            [ ]
+            [Se ocupó de la pantalla de presentación de la aplicación, la cual se trata de un gif
+             Después de la base principal del tablero del juego en si (Tres en Raya)
+             Y por ultimo la clase adapter con la cual se muestran de forma correcta las estadisticas]
 
             (Daniel del rio)
-            [ ]
+            [Se ocupó de toda la parte de Lógica, el funcionamiento del juego, creación de metodos y funcionamiento
+            óptimo de la aplicación]
 
             (Christian martinez)
-            [ ]
+            [Se ocupó de la búsqueda de las imagenes de las fichas, el tablero y de la interfaz arcade de la aplicación]
 
             (Miguel Lizaranzu)
-            [ ]
+            [Se ocupó de la parte de diseño junto al Jefe de equipo, importando la debida fuente de arcade
+            y el diseño de los campos de texto, así como los botones]
