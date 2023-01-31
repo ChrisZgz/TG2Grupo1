@@ -54,7 +54,7 @@ public class LecturaEscrituraDatos implements AutoCloseable {
             String line;
 
             while ((line = br.readLine()) != null){
-                String[] dato = line.split(" / ");
+                String[] dato = line.split(":");
                 lista.add(new Serie(dato[0],dato[1]));
             }
 
