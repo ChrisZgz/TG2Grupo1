@@ -5,6 +5,9 @@ public class Serie {
     private String nombre;
     private String resultado;
 
+    public Serie() {
+    }
+
     public Serie(String nombre, String puntuacion) {
         this.nombre = nombre;
         this.resultado = puntuacion;
@@ -28,6 +31,6 @@ public class Serie {
 
     @Override
     public String toString() {
-        return resultado + ':' + nombre;
+        return resultado + ';' + nombre;
     }
 }

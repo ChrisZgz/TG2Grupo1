@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class LecturaEscrituraDatos implements AutoCloseable {
+public class LecturaEscrituraDatos {
 
     private static final String nombreArchivo = "registros.csv";
 
     public static void verificar(Context context) throws FileNotFoundException {
         File filesDir = context.getFilesDir();
         String ruta = filesDir.getAbsolutePath();
-        String filePath = ruta + "/"+ nombreArchivo +".csv";
+        String filePath = ruta + "/" + nombreArchivo;
 
 
         File file = new File(filePath);
@@ -45,30 +45,24 @@ public class LecturaEscrituraDatos implements AutoCloseable {
         }
     }
 
-    public static ArrayList<Serie> mostrar(Context context){
-
-        try(InputStreamReader fis = new InputStreamReader(context.openFileInput(nombreArchivo));
-            BufferedReader br = new BufferedReader(fis))
+    public static ArrayList<Serie> mostrar(Context context) {
         {
-            ArrayList<Serie> lista = new ArrayList<>();
-            String line;
-
-            while ((line = br.readLine()) != null){
-                String[] dato = line.split(":");
-                lista.add(new Serie(dato[0],dato[1]));
+            ArrayList<Serie> informacion = new ArrayList<>();
+            try (InputStreamReader isr = new InputStreamReader(context.openFileInput(nombreArchivo));
+                 BufferedReader br = new BufferedReader(isr)) {
+                br.readLine();
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    Serie serie = new Serie();
+                    String[] rec = linea.split(";");
+                    serie.setResultado(rec[0]);
+                    serie.setNombre(rec[1]);
+                    informacion.add(serie);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        }catch (Exception e){
-
+            return informacion;
         }
-        return lista;
     }
-
-    @Override
-    public void close() throws Exception {
-
-    }
-
-    public static ArrayList<Serie> lista = new ArrayList<>();
-
 }

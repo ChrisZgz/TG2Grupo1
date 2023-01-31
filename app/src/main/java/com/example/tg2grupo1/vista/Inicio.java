@@ -1,6 +1,5 @@
 package com.example.tg2grupo1.vista;
 
-import static com.example.tg2grupo1.controlers.LecturaEscrituraDatos.lista;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -96,15 +95,13 @@ public class Inicio extends AppCompatActivity {
         View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
         //pedir todos los datos
 
-        LecturaEscrituraDatos.mostrar(this);
-        ArrayList<Serie> series = new ArrayList<>();
+        ArrayList<Serie> series = LecturaEscrituraDatos.mostrar(this);
 
-
-        Collections.reverse(lista);
+        Collections.reverse(series);
         ArrayList<Serie> contenido = new ArrayList<>();
-        if(lista.size() != 0){
-            for(int i = 0; i <= 9|| i<lista.size(); i++){
-                contenido.add(lista.get(i));
+        if(series.size() != 0){
+            for(int i = 0; i <= 9 && i<series.size(); i++){
+                contenido.add(series.get(i));
             }
         }
         recycler = dialogoView.findViewById(R.id.recyclerEstadisticas);
