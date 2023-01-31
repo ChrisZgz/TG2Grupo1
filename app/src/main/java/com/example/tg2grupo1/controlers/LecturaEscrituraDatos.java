@@ -13,7 +13,10 @@ public class LecturaEscrituraDatos implements AutoCloseable {
     private static final String nombreArchivo = "registros.csv";
 
     public static void verificar(Context context) throws FileNotFoundException {
-        File file = new File(context.getExternalFilesDir(null), nombreArchivo);
+        File filesDir = context.getFilesDir();
+        String ruta = filesDir.getAbsolutePath();
+        String filePath = ruta + "/"+ nombreArchivo +".csv";
+        File file = new File(filePath);
         if (!file.exists()) {
             try (FileOutputStream fos = context.openFileOutput(nombreArchivo, context.MODE_PRIVATE);
                  PrintWriter pw = new PrintWriter(fos)) {
