@@ -1,7 +1,11 @@
 package com.example.tg2grupo1.vista;
 
+import static com.example.tg2grupo1.controlers.LecturaEscrituraDatos.lista;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,15 +16,19 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.tg2grupo1.R;
+import com.example.tg2grupo1.adapter.SerieAdapter;
 import com.example.tg2grupo1.controlers.LecturaEscrituraDatos;
+import com.example.tg2grupo1.modelo.Serie;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Inicio extends AppCompatActivity {
     Button creditos;
     Button iniciar;
     Button estadisticas;
-
+    RecyclerView recycler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +74,8 @@ public class Inicio extends AppCompatActivity {
         public void mostrarAlertDialog(Button button){
             AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
             LayoutInflater inflater = this.getLayoutInflater();
-            dialogo.setTitle("");
+
+
             dialogo.setOnDismissListener(new DialogInterface.OnDismissListener() {
                 @Override
                 public void onDismiss(DialogInterface dialog) {
@@ -84,18 +93,33 @@ public class Inicio extends AppCompatActivity {
     public void mostrarEstadisticas(Button button){
         AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        dialogo.setTitle("");
+        View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
+        //pedir todos los datos
+
+        LecturaEscrituraDatos.mostrar(this);
+        ArrayList<Serie> series = new ArrayList<>();
+
+
+        Collections.reverse(lista);
+        ArrayList<Serie> contenido = new ArrayList<>();
+        if(lista.size() != 0){
+            for(int i = 0; i <= 9|| i<lista.size(); i++){
+                contenido.add(lista.get(i));
+            }
+        }
+        recycler = dialogoView.findViewById(R.id.recyclerEstadisticas);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recycler.setLayoutManager(layoutManager);
+
+        recycler.setAdapter(new SerieAdapter(contenido));
+
         dialogo.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
             cambiarColor2(button);
             }
         });
-
-        View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
         dialogo.setView(dialogoView);
-
-
         dialogo.show();
     }
 
