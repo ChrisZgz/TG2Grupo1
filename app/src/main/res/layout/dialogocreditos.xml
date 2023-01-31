@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/arcade"
-            android:text="Christian Martínez"
+            android:text="Christian Martinez"
             android:textAlignment="center"
             android:textColor="#8A864D"
             android:textSize="14sp" />
