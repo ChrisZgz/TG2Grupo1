@@ -91,7 +91,7 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void mostrarEstadisticas(Button button){
-        AlertDialog.Builder dialogo = new AlertDialog.Builder(this);
+        AlertDialog.Builder estadisticas = new AlertDialog.Builder(this);
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogoView = inflater.inflate(R.layout.recylcerviewalertdialog, null);
         //pedir todos los datos
@@ -113,14 +113,14 @@ public class Inicio extends AppCompatActivity {
 
         recycler.setAdapter(new SerieAdapter(contenido));
 
-        dialogo.setOnDismissListener(new DialogInterface.OnDismissListener() {
+        estadisticas.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
             cambiarColor2(button);
             }
         });
-        dialogo.setView(dialogoView);
-        dialogo.show();
+        estadisticas.setView(dialogoView);
+        estadisticas.show();
     }
 
     public void cambiarColor(Button boton) {
