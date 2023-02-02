@@ -1,4 +1,4 @@
-# TG1Grupo1
+# TG2Grupo1
 ## Introducción
 
     # Estructuras de datos
